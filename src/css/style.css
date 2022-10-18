@@ -1,0 +1,169 @@
+.header {
+  margin-top: 1.5rem;
+  font-family: 'Figtree', sans-serif !important;
+  margin-bottom: 3.5rem;
+  
+ }
+
+ .h1, h2 , h3 , h4 {
+
+    font-weight:bold !important;
+ }
+ 
+ .body {
+    background-color: gray !important;
+}
+
+/* barra nav*/
+
+.logo {
+    float: left;
+    width: 44px;
+    height: 32px; 
+    margin-left: 5%;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    margin-right: 3%;
+    }
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl { 
+        display: block !important;
+        margin-bottom: 2rem;
+    }
+    
+.barranav {
+
+  background-color: #fee600;
+  height:60px;
+      }
+
+/* input busqueda*/
+
+ .form-control:focus{ 
+     box-shadow:none !important;
+      }
+
+.btn-input{
+   border:0px;
+   background-color: rgba(255, 255, 255, 0.856);
+   width: 40px;
+}
+
+.form-control {
+    border-radius: 0rem !important;
+    border: 0px !important;
+}
+
+/* reseto input search y darle estilo */
+input[type=text] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    background-color: none;
+    
+  }
+
+  
+/* Pantalla General Resultados */
+
+
+.card-busqueda {
+
+    margin-right: 25%;
+    margin-left: 25%;
+    font-weight:bold;
+}
+
+
+
+ 
+/* fondo blanco de productos en busqueda */
+
+.container-gral {
+    max-width:850px !important;
+    background-color: white !important;
+    border: 0.5px;
+   
+}
+
+
+/* imagen en vista de resultados*/
+
+.img-busqueda {
+
+    width: 70% !important;
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
+
+}   
+
+
+/* Pagina de detalle  -------------*/
+
+
+/* fondo blanco de pantallas*/
+.card {
+
+    margin-right: 20%;
+    margin-left: 20%;
+    
+}
+
+
+/* imagen en pantalla de detalle */
+
+.img-detalle {
+
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 80%!important;
+    margin-top:0.5rem;
+    
+}
+
+.text-descrip {
+
+color:#a19e9e;
+margin-top:1rem;
+
+}
+
+
+.description {
+
+    margin-top:4rem !important;
+
+
+}
+.btn-primary  {
+
+    width:80%;
+    background-color: #3483fa !important;
+    margin-top: 3rem !important;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+
+.condition {
+    float:left;
+    margin-top: 1rem;
+}
+
+.vendidos {
+
+    margin-top: 1rem;
+}
+
+.precio {
+    margin-top: 2rem;
+}
+
+.location {
+
+    float: right;
+    margin-top: 2rem;
+    font-weight:lighter;
+}
+
