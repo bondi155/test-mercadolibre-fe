@@ -9,6 +9,8 @@ al hacer click sobre uno de ellos, debería navegar a la vista de Detalle de Pro
 Componentens :
 
 ● Se uso Recoil para los useStates globales , react-router-dom con parametros (URL Y Search) , node-fetch para APIs en el BE y axios para el FR.
+
 ● Estilo en CSS , Bootstrap (responsive).
+
 ● Eslint y prettier con parametros Standard.
  
