@@ -1,8 +1,9 @@
-const express = require("express");
+
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const express = require('express');
 const port = 5007;
-const bodyParser = require("body-parser");
-const getFunc = require("./controllers/Getfunc");
-const cors = require("cors");
+const getFunc = require('./controllers/Getfunc');
 const router = express.Router();
 
 const app = express();
@@ -14,15 +15,15 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 router.use((request, response, next) => {
-  console.log("Get desde API ML OK");
+  console.log('Get desde API ML OK');
   next();
 });
 //get productos busqueda
-app.get("/api/search", getFunc.getDataProductos__);
+app.get('/api/search', getFunc.getDataProductos__);
 
 //get item detalle
-app.get("/items/:id", getFunc.getDataItems__);
+app.get('/items/:id', getFunc.getDataItems__);
 
 app.listen(port, () => {
-  console.log("servidor iniciado");
+  console.log('servidor iniciado');
 });

@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
-import { Button, Container, Row, Col } from "react-bootstrap";
-import axios from "axios";
+import axios from 'axios';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 function Detalle() {
   const [infoItem, setInfoItem] = useState({});
@@ -20,7 +20,7 @@ function Detalle() {
         const single_item = item.data;
 
         const encabezado = {
-          author: { name: "Alejandro", lastname: "Redonte" },
+          author: { lastname: 'Redonte', name: 'Alejandro' },
           item: item.data,
         };
         setInfoItem(single_item);
@@ -48,38 +48,41 @@ function Detalle() {
   }, []);
 
   return (
-    <div className="header">
+    <div className='header'>
       {Object.values(infoItem).map((item, id) => {
         return (
           <Fragment key={id}>
-            <div className="card">
+            <div className='card'>
               <Container>
                 <Row>
                   <Col sm={6}>
-                    <img src={item.picture} alt="" className="img-detalle" />
+                    <img src={item.picture} alt='' className='img-detalle' />
                   </Col>
                   <Col sm={1}></Col>
                   <Col sm={4}>
-                    <p className="condition">{item.condition} - </p>
-                    <p className="vendidos"> - {item.sold_quantity} vendidos</p>{" "}
+                    <p className='condition'>{item.condition} - </p>
+                    <p className='vendidos'>
+                      {' '}
+                      - {item.sold_quantity} vendidos
+                    </p>{' '}
                     <h3>{item.title}</h3>
                     <h1>
-                      ${" "}
-                      {Intl.NumberFormat("de-DE", {
-                        minimumFractionDigits: 2,
+                      ${' '}
+                      {Intl.NumberFormat('de-DE', {
                         maximumFractionDigits: 2,
-                      }).format(item.price.amount)}{" "}
+                        minimumFractionDigits: 2,
+                      }).format(item.price.amount)}{' '}
                     </h1>
-                    <Button variant="primary">Comprar</Button>{" "}
+                    <Button variant='primary'>Comprar</Button>{' '}
                   </Col>
                 </Row>
               </Container>
               <br />
               <Container>
                 <Row>
-                  <Col className="description" sm={8}>
+                  <Col className='description' sm={8}>
                     <h4>Descripción del producto</h4>
-                    <p className="text-descrip"> {item.description}</p>
+                    <p className='text-descrip'> {item.description}</p>
                   </Col>
                 </Row>
               </Container>

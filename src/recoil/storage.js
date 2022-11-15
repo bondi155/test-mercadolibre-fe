@@ -1,17 +1,11 @@
-import {atom} from 'recoil';
-
-
+import { atom } from 'recoil';
 
 export const queryState = atom({
-  key: 'queryState',
   default: '',
+  key: 'queryState',
 });
 
-  
 export const arrayProducto = atom({
-  key: 'arrayProducto',
   default: [],
+  key: 'arrayProducto',
 });
-
-
-

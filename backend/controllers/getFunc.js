@@ -1,5 +1,5 @@
-const URL = "https://api.mercadolibre.com";
-const fetch = require("node-fetch");
+const URL = 'https://api.mercadolibre.com';
+const fetch = require('node-fetch');
 
 //get productos limitado a 4 resultados en front y mapeo de respuesta
 async function getDataProductos__(req, res) {
@@ -17,25 +17,25 @@ async function getDataProductos__(req, res) {
       if (result.length > 0) {
         let products = result.map((result) => {
           return {
-            id: result.id,
-            title: result.title,
-            price: {
-              currency: result.currency_id,
-              amount: result.price,
-              decimals: 2,
-            },
-            picture: result.thumbnail,
             condition: result.condition,
             free_shipping: result.shipping.free_shipping,
+            id: result.id,
             location: result.address.state_name,
+            picture: result.thumbnail,
+            price: {
+              amount: result.price,
+              currency: result.currency_id,
+              decimals: 2,
+            },
+            title: result.title,
           };
         });
         res.send(products);
       } else {
-        throw "Producto no encontrado.";
+        throw 'Producto no encontrado.';
       }
     })
-    .catch((err) => console.error("error:" + err));
+    .catch((err) => console.error('error:' + err));
 }
 
 //get item con mapeo de respuesta
@@ -48,29 +48,29 @@ async function getDataItems__(req, res) {
   const descriptionParsed = await description.json();
 
   res.json({
-    item: {
-      id: id,
-      title: itemData.title,
-      price: {
-        currency: itemData.currency_id,
-        amount: itemData.price,
-        decimals: 2,
-      },
-      picture: itemData.pictures[0].url,
-      condition: itemData.condition,
-      free_shipping: itemData.shipping.free_shipping,
-      sold_quantity: itemData.sold_quantity,
-      description: descriptionParsed.plain_text,
-    },
-
     catch(error) {
       res.status(404).send(error);
       console.log(error);
+    },
+
+    item: {
+      condition: itemData.condition,
+      description: descriptionParsed.plain_text,
+      free_shipping: itemData.shipping.free_shipping,
+      id: id,
+      picture: itemData.pictures[0].url,
+      price: {
+        amount: itemData.price,
+        currency: itemData.currency_id,
+        decimals: 2,
+      },
+      sold_quantity: itemData.sold_quantity,
+      title: itemData.title,
     },
   });
 }
 
 module.exports = {
-  getDataProductos__: getDataProductos__,
   getDataItems__: getDataItems__,
+  getDataProductos__: getDataProductos__,
 };
